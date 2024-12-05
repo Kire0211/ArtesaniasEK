@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarArtesanias();
 });
 
-let carrito = [];
 
 const productGrid = document.getElementById("product-grid");
 

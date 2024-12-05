@@ -10,5 +10,5 @@ window.onscroll = function() {
 
 // Función para volver arriba
 scrollToTopBtn.onclick = function() {
-    document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
+    document.documentElement.scrollTop = 0; 
 };
