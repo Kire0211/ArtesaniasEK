@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novedades</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  </head>
+  <style>
+    
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #d35400;
+    --third-color: #bf6511;
+    --fourth-color: #ffffff;
+    --footer-background: url("https://i.pinimg.com/736x/f3/38/6e/f3386e3af70b59e300ea538a27040efb.jpg");
+    --text-color-dark: #2c3e50;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+    padding: 20px;
+    border: 2px solid rgba(211, 84, 0, 0.2);
+    max-width: 1600px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), var(--footer-background);
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--secondary-color) !important;
+}
+
+.logo-font {
+    font-family: "Playfair Display", serif;
+    color: var(--primary-color);
+}
+
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-artesanal {
+    background-color: var(--secondary-color);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-artesanal:hover {
+    background-color: var(--third-color);
+    color: var(--fourth-color);
+    transform: scale(1.05);
+}
+
+#destacados, #catalogo, #opiniones {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer-overlay {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), var(--footer-background);
+    background-size: cover;
+    background-position: center;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .scroll-to-top:hover {
+    background-color:var(--primary-color);
+  }
+
+#destacados h2, #catalogo h2, #opiniones h2 {
+    color: black;
+}
+
+h2 {
+    color: black;
+}
+
+.section-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.9rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.opiniones-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.opinion-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.opinion-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.opinion-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.rating {
+    font-size: 1.2rem;
+    color: gold;
+}
+
+#opiniones {
+    padding: 20px 0;
+}
+
+.opinion-content {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.collage-img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carousel-item img {
+    height: 150px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-card img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+#quienes-somos h1, #quienes-somos h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+}
+
+#quienes-somos .btn {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+#destacados p, #catalogo p, #opiniones p {
+    color: black;
+}
+
+  </style>
+  <body>
+  
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center" href="#">
+            <img
+              src="Img/logoartesanias.png"
+              alt="Logo"
+              height="50"
+              class="me-3"
+            />
+            <span class="logo-font fs-3 fw-bold">Artesanias&Co</span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="Catalogo.html">Catálogo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Principal.html">Pagina Principal</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="Logins.html">Iniciar Sesion</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Logins.html">Registrarse</a>
+                </li>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTopBtn" title="Volver arriba">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+    <section id="opiniones" class="mb-4">
+        <h2 class="section-title text-center">¡Productos Nuevos!</h2>
+        <div id="opinionesCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op1.jpeg" alt="Opinión 1" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">Mochilas Wayuu</p>
+                                    <p class="text-muted mb-2">Coloridas mochilas tejidas a mano con técnicas ancestrales, cada diseño es único y refleja la cultura de la comunidad Wayuu</p>
+                                    <h6 class="mb-1">- Mujeres de la comunidad Wayuu en La Guajira.</h6>
+                                    <div class="rating text-warning">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op2.jpeg" alt="Opinión 2" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">Sombrero Vueltiao</p>
+                                    <p class="text-muted mb-2">Sombrero tradicional hecho de caña fleha, conocido por su diseño en blanco y negro, simboliza la cultura Zenú.</p>
+                                    <h6 class="mb-1">- Comunidad Zenú en la región de Sucre.</h6>
+                                    <div class="rating text-warning">
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op3.jpeg" alt="Opinión 3" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">Molas</p>
+                                    <p class="text-muted mb-2">Piezas de tela con coloridos diseños geométricos, elaboradas por las mujeres de la comunidad Guna, que representan su cosmovisión.</p>
+                                    <h6 class="mb-1">- Mujeres de la comunidad Guna en Panamá y Colombia.</h6>
+                                    <div class="rating text-warning">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op4.jpeg" alt="Opinión 4" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">Cerámica de Ráquira</p>
+                                    <p class="text-muted mb-2">Cerámica utilitaria y decorativa, famosa por sus colores vibrantes y técnicas de alfarería que se han transmitido de generación en generación.</p>
+                                    <h6 class="mb-1">- Artesanos de Ráquira, Boyacá. </h6>
+                                    <div class="rating text-warning">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op5.jpeg" alt="Opinión 5" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">Joyería de Esmeraldas</p>
+                                    <p class="text-muted mb-2">Joyas elaboradas con esmeraldas colombianas, reconocidas mundialmente por su calidad y belleza.</p>
+                                    <h6 class="mb-1">- Joyerías en diversas regiones de Colombia</h6>
+                                    <div class="rating text-warning">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op6.jpeg" alt="Opinión 6" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">Cestería de los Zenú</p>
+                                    <p class="text-muted mb-2">Cestas y otros objetos tejidos con caña fleha, que reflejan la tradición y habilidades de la comunidad Zenú</p>
+                                    <h6 class="mb-1">- Comunidad Zenú en la región de Sucre</h6>
+                                    <div class="rating text-warning">
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op7.jpeg" alt="Opinión 7" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">Hamacas</p>
+                                    <p class="text-muted mb-2">Hamacas tejidas a mano, que son tanto funcionales como decorativas, representando la cultura de las comunidades indígenas.</p>
+                                    <h6 class="mb-1">- Diversas comunidades indígenas en Colombia.</h6>
+                                    <div class="rating text-warning">
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op8.jpeg" alt="Opinión 8" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">Ponchos</p>
+                                    <p class="text-muted mb-2">Prendas típicas de lana, utilizadas en las regiones frías, que combinan funcionalidad y diseño tradicional</p>
+                                    <h6 class="mb-1">- Artesanos de Cundinamarca y Boyacá</h6>
+                                    <div class="rating text-warning">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op9.jpeg" alt="Opinión 9" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">Alpargatas</p>
+                                    <p class="text-muted mb-2">Calzado ligero y cómodo, hecho de lona y cuerda, ideal para el clima cálido de Colombia</p>
+                                    <h6 class="mb-1">- Artesanos de diversas regiones del país.</h6>
+                                    <div class="rating text-warning">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#opinionesCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#opinionesCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <div class="row align-items-left">
+            <div class="col-md-6">
+              <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem;">¡Descubre los diferentes eventos!</h2>
+              <br>
+              <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" font-size>Expoartesanías 2024
+                <br>Fecha: Del 4 al 17 de diciembre de 2024
+
+            </h2>
+                <p>Este evento se llevará a cabo en Corferias, Bogotá, y reunirá a artesanos de todo el país para exhibir sus creaciones únicas. Los visitantes podrán adquirir productos artesanales, participar en talleres y disfrutar de actividades culturales que resaltan la riqueza de la artesanía colombiana. Además, se ofrecerán descuentos especiales y promociones exclusivas durante la feria, lo que la convierte en una excelente oportunidad para conocer y apoyar a los artesanos locales.</p>
+                <br>
+                <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" font-size>Pasarela Colombia Artesanal
+                    <br>Fecha 21 de noviembre de 2024
+
+
+                </h2>
+                    <p>Este evento marcará la apertura de una plataforma dedicada a la promoción de las artesanías colombianas. Se presentarán diversas colecciones de artesanos destacados, y los asistentes podrán interactuar directamente con los creadores, aprendiendo sobre sus técnicas y tradiciones.</p>
+                    <br>
+                    <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" font-size>Concurso Nacional de Artesanías
+                        <br>Fecha: 19 de noviembre de 2025
+        
+                    </h2>
+                        <p> Este concurso invitará a artesanos de todo el país a presentar sus mejores obras. Los ganadores recibirán premios y la oportunidad de exhibir sus productos en ferias y eventos importantes, promoviendo así su trabajo y talento en el ámbito nacional e internacional.</p>
+                        
+            </div>
+            <div class="col-md-6">
+                <div class="row row-cols-2 g-2">
+                    <div class="col">
+                        <img src="Img/ventas.jpeg" class="img-fluid collage-img" alt="Imagen 1">
+                    </div>
+                    <div class="col">
+                        <img src="Img/collage2.jpeg" class="img-fluid collage-img" alt="Imagen 2">
+                    </div>
+                    <div class="col">
+                        <img src="Img/collage3.jpeg" class="img-fluid collage-img" alt="Imagen 3">
+                    </div>
+                    <div class="col">
+                        <img src="Img/collage4.jpeg" class="img-fluid collage-img" alt="Imagen 4">
+                    </div>
+                    <div class="col">
+                        <img src="Img/collage5.jpeg" class="img-fluid collage-img" alt="Imagen 5">
+                    </div>
+                    <div class="col">
+                        <img src="Img/collage6.jpeg" class="img-fluid collage-img" alt="Imagen 6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Catalog Section -->
+      <section id="catalogo" class="mb-5">
+        <h2 class="section-title">Técnicas</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 product-card">
+                    <img src="Img/Joyeri.jpeg" class="card-img-top img-fluid" alt="Joyería" />
+                    <div class="card-body">
+                        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" font-size>Expoartesanías 2024</h2>
+                        <p class="card-text">Esta técnica es característica de la comunidad Wayuu, ubicada en la región de La Guajira. Las mochilas Wayuu son conocidas por sus vibrantes colores y patrones geométricos, que tienen significados culturales y espirituales.
+                            El tejido se realiza a mano utilizando la técnica de "crochet" o "macramé". Las mujeres Wayuu crean un diseño en su mente o lo dibujan en un papel antes de comenzar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 product-card">
+                    <img src="Img/ceramica5.jpeg" class="card-img-top img-fluid" alt="Cerámica" />
+                    <div class="card-body">
+                        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" font-size>Cerámica de Ráquira</h2>
+                        <p class="card-text">Ráquira, en Boyacá, es famosa por su cerámica. Esta técnica incluye la creación de piezas utilitarias y decorativas, como platos, jarras y figuras.
+                            La arcilla se amasa y se moldea a mano o se utiliza un torno de alfarero. Las piezas se dejan secar al aire antes de ser horneadas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 product-card">
+                    <img src="Img/ceramica5.jpeg" class="card-img-top img-fluid" alt="Cerámica" />
+                    <div class="card-body">
+                        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" font-size>Cestería Zenú</h2>
+                        <p class="card-text"> Esta técnica es utilizada por la comunidad Zenú, especialmente en la región de Sucre. La cestería incluye la creación de cestas, sombreros y otros objetos decorativos.
+                            Las tiras de caña se cortan y se trenzan o tejen en diferentes patrones. La técnica puede ser compleja, ya que requiere habilidad para crear formas y estructuras.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 product-card">
+                    <img src="Img/ceramica5.jpeg" class="card-img-top img-fluid" alt="Cerámica" />
+                    <div class="card-body">
+                        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" font-size>Molas</h2>
+                        <p class="card-text">Las molas son una forma de arte textil creada por la comunidad Guna, que habita en la región de Guna Yala (anteriormente conocida como la Comarca de San Blas) y en Colombia. Estas piezas son conocidas por sus intrincados diseños y colores vibrantes.
+                            Las capas de tela se cosen juntas y se recortan para crear diseños en relieve. Este proceso se llama "appliqué".
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 product-card">
+                    <img src="Img/ceramica5.jpeg" class="card-img-top img-fluid" alt="Cerámica" />
+                    <div class="card-body">
+                        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" font-size>Sombrero Vueltiao</h2>
+                        <p class="card-text">Este sombrero es un símbolo de la cultura afrocolombiana, especialmente de la región de la Costa Caribe. Está hecho de caña fleha y es conocido por su diseño en espiral.
+                            Se utilizan técnicas de tejido a mano, donde se entrelazan las tiras de caña para formar el sombrero. La base se crea primero, y luego se van añadiendo capas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 product-card">
+                    <img src="Img/textiles.jpeg" class="card-img-top img-fluid" alt="Textiles" />
+                    <div class="card-body">
+                        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" font-size>Joyería de Esmeraldas</h2>
+                        <p class="card-text">Colombia es famosa por sus esmeraldas, y la joyería que se elabora con ellas es una forma de artesanía muy apreciada. Los artesanos crean piezas únicas que reflejan la belleza de estas piedras preciosas.
+                            La técnica incluye el corte y pulido de las esmeraldas, así como la creación de monturas y diseños de joyería. Los artesanos utilizan herramientas especializadas para dar forma a las piezas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalogo" class="mb-5">
+        <h2 class="section-title">Materiales</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 product-card">
+                    <img src="Img/Joyeri.jpeg" class="card-img-top img-fluid" alt="Joyería" />
+                    <div class="card-body">
+                        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" font-size>Hilo de Algodón o Acrílico</h2>
+                        <p class="card-text">Este material es fundamental en el tejido de mochilas Wayuu. El hilo de algodón es suave y duradero, mientras que el acrílico ofrece una amplia gama de colores vibrantes. Ambos tipos de hilo permiten a los artesanos crear patrones intrincados y coloridos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 product-card">
+                    <img src="Img/ceramica5.jpeg" class="card-img-top img-fluid" alt="Cerámica" />
+                    <div class="card-body">
+                        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" font-size>Arcilla</h2>
+                        <p class="card-text">La arcilla es el material principal utilizado en la cerámica de Ráquira. Es un recurso natural que se encuentra en la región y se caracteriza por su plasticidad, lo que permite moldearla fácilmente. La arcilla se puede teñir y esmaltar para crear diferentes acabados en las piezas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 product-card">
+                    <img src="Img/ceramica5.jpeg" class="card-img-top img-fluid" alt="Cerámica" />
+                    <div class="card-body">
+                        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" font-size>Caña Fleha</h2>
+                        <p class="card-text">Este material vegetal es esencial en la cestería Zenú y en la fabricación del sombrero vueltiao. La caña fleha se cosecha de la naturaleza, se seca y se corta en tiras delgadas que se pueden tejer para crear una variedad de objetos, desde cestas hasta sombreros.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 product-card">
+                    <img src="Img/ceramica5.jpeg" class="card-img-top img-fluid" alt="Cerámica" />
+                    <div class="card-body">
+                        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" font-size>Telas de Algodón</h2>
+                        <p class="card-text">Las telas de algodón de diversos colores son utilizadas en la creación de molas por la comunidad Guna. Este material es fácil de trabajar y permite la aplicación de técnicas de costura y recorte que dan vida a los complejos diseños en relieve.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 product-card">
+                    <img src="Img/ceramica5.jpeg" class="card-img-top img-fluid" alt="Cerámica" />
+                    <div class="card-body">
+                        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" font-size>Esmeraldas</h2>
+                        <p class="card-text">Las esmeraldas colombianas son reconocidas mundialmente por su calidad y color. Este material precioso es utilizado en la elaboración de joyería, donde se corta y pule para resaltar su belleza. Las esmeraldas son a menudo combinadas con metales preciosos como oro y plata.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 product-card">
+                    <img src="Img/textiles.jpeg" class="card-img-top img-fluid" alt="Textiles" />
+                    <div class="card-body">
+                        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" font-size>Metales Preciosos (Oro y Plata)</h2>
+                        <p class="card-text">Estos metales son utilizados en la creación de monturas y piezas de joyería. El oro y la plata son valorados por su durabilidad y belleza, y se pueden moldear y soldar para crear diseños elegantes que complementan las esmeraldas y otras piedras preciosas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-overlay text-white py-5">
+      <div class="bg-orange-900 text-white py-1">
+        <div class="container text-center">
+          <div class="mb-1">
+            <img
+              src="Img/logoartesanias.png"
+              alt="Logo Artesanias&Co"
+              class="mx-auto h-16"
+            />
+            <p class="text-md font-serif italic mt-1">
+              "Creaciones que conectan con el corazón"
+            </p>
+          </div>
+          <div class="container mx-auto px-2 grid md:grid-cols-3 gap-1">
+            <div>
+              <h4 class="text-md logo-font mb-1 text-color">Artesanias&Co</h4>
+              <p class="text-sm">
+                Celebrando la artesanía y la creatividad local
+              </p>
+              <p class="text-sm mt-1">Contacto: info@artesaniasandco.com</p>
+            </div>
+            <div>
+              <h4 class="text-sm logo-font mb-1 text-color">Navegación</h4>
+              <ul class="text-sm">
+                <li><a href="Principal.html" class="hover:text-orange-300">Inicio</a></li>
+                <li>
+                  <a href="Catalogo.html" class="hover:text-orange-300">Catálogo</a>
+                </li>
+                <li><p>Contactos</p></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-sm logo-font mb-1 text-color">Servicios</h4>
+              <ul class="text-sm">
+                <li>✓ Envío Gratuito</li>
+                <li>✓ Calidad Garantizada</li>
+                <li>✓ Soporte al Cliente</li>
+                <li>✓ Devoluciones Fáciles</li>
+              </ul>
+            </div>
+          </div>
+          <p class="mt-1 text-sm">
+            &copy; 2024 Artesanias&Co. Todos los derechos reservados.
+          </p>
+          <div class="mt-1">
+            <a href="#" class="text-white me-1 text-sm"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="text-white me-1 text-sm"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" class="text-white text-sm"
+              ><i class="bi bi-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+   <script>
+    // Mostrar el botón de volver arriba al hacer scroll
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "flex";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+};
+
+// Función para volver arriba
+scrollToTopBtn.onclick = function() {
+    document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
+};
+   </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

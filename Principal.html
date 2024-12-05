@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artesanias&Co - Creaciones Únicas</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  </head>
+  <style>
+    :root {
+    --primary-color: #ffffff;
+    --secondary-color: #d35400;
+    --third-color: #bf6511;
+    --fourth-color: #ffffff;
+    --footer-background: url("https://i.pinimg.com/736x/f3/38/6e/f3386e3af70b59e300ea538a27040efb.jpg");
+    --text-color-dark: #2c3e50;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+    padding: 20px;
+    border: 2px solid rgba(211, 84, 0, 0.2);
+    max-width: 1600px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), var(--footer-background);
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--secondary-color) !important;
+}
+
+.logo-font {
+    font-family: "Playfair Display", serif;
+    color: var(--primary-color);
+}
+
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-artesanal {
+    background-color: var(--secondary-color);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-artesanal:hover {
+    background-color: var(--third-color);
+    color: var(--fourth-color);
+    transform: scale(1.05);
+}
+
+#destacados, #catalogo, #opiniones {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer-overlay {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), var(--footer-background);
+    background-size: cover;
+    background-position: center;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .scroll-to-top:hover {
+    background-color:var(--primary-color);
+  }
+
+#destacados h2, #catalogo h2, #opiniones h2 {
+    color: black;
+}
+
+h2 {
+    color: black;
+}
+
+.section-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.9rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.opiniones-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.opinion-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.opinion-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.opinion-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.rating {
+    font-size: 1.2rem;
+    color: gold;
+}
+
+#opiniones {
+    padding: 20px 0;
+}
+
+.opinion-content {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.collage-img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carousel-item img {
+    height: 150px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-card img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+#quienes-somos h1, #quienes-somos h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+}
+
+#quienes-somos .btn {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+#destacados p, #catalogo p, #opiniones p {
+    color: black;
+}
+
+  </style>
+  <body>
+  
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="Img/logoartesanias.png"
+            alt="Logo"
+            height="50"
+            class="me-3"
+          />
+          <span class="logo-font fs-3 fw-bold">Artesanias&Co</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="Catalogo.html">Catálogo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Novedades.html">Novedades</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Logins.html">Iniciar Sesion</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Logins.html">Registrarse</a>
+              </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="Carrito.html">
+                <i class="bi bi-cart4 fs-4"></i>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                  id="cart-count"
+                  >0</span
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTopBtn" title="Volver arriba">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+      <!-- Featured Products Section -->
+      <section id="destacados" class="mb-5">
+        <h2 class="section-title">¡Nuestros Destacados!</h2>
+        <div class="row row-cols-1 row-cols-md-4 g-4" id="product-grid">
+          <!-- Los productos se cargarán aquí mediante JavaScript -->
+        </div>
+        <div class="text-center mt-4">
+          <a href="Catalogo.html" class="btn btn-artesanal">Ver Más Artículos</a>
+        </div>
+      </section>
+
+      <!-- Catalog Section -->
+      <section id="catalogo" class="mb-5">
+        <h2 class="section-title">¡Catálogo Destacado!</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 product-card">
+                    <img src="Img/Joyeri.jpeg" class="card-img-top img-fluid" alt="Joyería" />
+                    <div class="card-body">
+                        <h5 class="card-title logo-font">Joyería Artesanal</h5>
+                        <p class="card-text">Piezas únicas elaboradas con técnicas tradicionales.</p>
+                        <a href="Catalogo.html" class="btn btn-artesanal">Ver Joyeria</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 product-card">
+                    <img src="Img/ceramica5.jpeg" class="card-img-top img-fluid" alt="Cerámica" />
+                    <div class="card-body">
+                        <h5 class="card-title logo-font">Cerámica Hecha a Mano</h5>
+                        <p class="card-text">Diseños exclusivos y funcionales.</p>
+                        <a href="Catalogo.html" class="btn btn-artesanal">Ver Ceramica</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 product-card">
+                    <img src="Img/textiles.jpeg" class="card-img-top img-fluid" alt="Textiles" />
+                    <div class="card-body">
+                        <h5 class="card-title logo-font">Textiles Artesanales</h5>
+                        <p class="card-text">Tejidos únicos que cuentan historias.</p>
+                        <a href="Catalogo.html" class="btn btn-artesanal">Ver Textiles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Apartado de imagen grande y texto de motivación -->
+      <section class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+              <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem;">¡Descubre la belleza de lo artesanal!</h2>
+              <br><p>En Artesanias&CO, cada producto cuenta una historia. Te invitamos a explorar nuestra colección única de artesanías que reflejan la pasión y dedicación de nuestros artesanos. 
+                  Cada pieza es elaborada con esmero, utilizando técnicas tradicionales que han sido transmitidas de generación en generación. 
+                  Creemos firmemente en la importancia de preservar estas tradiciones, y es por eso que cada artículo que ofrecemos está lleno de autenticidad y carácter. 
+                  Desde joyería exquisita hasta cerámica funcional, nuestra selección está diseñada para satisfacer los gustos más exigentes y para que cada cliente encuentre algo especial que resuene con su propia historia.</p>
+                  <br><a href="Catalogo.html" class="btn btn-primary">Saber más</a>
+            </div>
+            <div class="col-md-6">
+                <div class="row row-cols-2 g-2">
+                    <div class="col">
+                        <img src="Img/ventas.jpeg" class="img-fluid collage-img" alt="Imagen 1">
+                    </div>
+                    <div class="col">
+                        <img src="Img/collage2.jpeg" class="img-fluid collage-img" alt="Imagen 2">
+                    </div>
+                    <div class="col">
+                        <img src="Img/collage3.jpeg" class="img-fluid collage-img" alt="Imagen 3">
+                    </div>
+                    <div class="col">
+                        <img src="Img/collage4.jpeg" class="img-fluid collage-img" alt="Imagen 4">
+                    </div>
+                    <div class="col">
+                        <img src="Img/collage5.jpeg" class="img-fluid collage-img" alt="Imagen 5">
+                    </div>
+                    <div class="col">
+                        <img src="Img/collage6.jpeg" class="img-fluid collage-img" alt="Imagen 6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+      <!-- Customer Reviews Section -->
+      <section id="opiniones" class="mb-4">
+        <h2 class="section-title text-center">Lo Que Nuestros Clientes Dicen</h2>
+        <div id="opinionesCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op1.jpeg" alt="Opinión 1" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">"Una experiencia de compra excepcional"</p>
+                                    <p class="text-muted mb-2">Las artesanías que compré superaron mis expectativas. Cada pieza refleja un trabajo meticuloso y una pasión auténtica por el arte tradicional.</p>
+                                    <h6 class="mb-1">- María González</h6>
+                                    <div class="rating text-warning">
+                                        ★★★★★
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op2.jpeg" alt="Opinión 2" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">"Productos únicos y significativos"</p>
+                                    <p class="text-muted mb-2">Cada artesanía cuenta una historia. Me encanta cómo Artesanias&CO apoya a los artesanos locales y preserva técnicas tradicionales.</p>
+                                    <h6 class="mb-1">- Carlos Ramírez</h6>
+                                    <div class="rating text-warning">
+                                        ★★★★☆
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op3.jpeg" alt="Opinión 3" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">"Calidad y atención impecables"</p>
+                                    <p class="text-muted mb-2">El servicio al cliente es extraordinario. Mis regalos artesanales fueron empacados con un cuidado y una dedicación que realmente se aprecia.</p>
+                                    <h6 class="mb-1">- Ana Martínez</h6>
+                                    <div class="rating text-warning">
+                                        ★★★★★
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op4.jpeg" alt="Opinión 4" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">"Un regalo que toca el corazón"</p>
+                                    <p class="text-muted mb-2">Regalé una pieza de cerámica a mi madre y quedó absolutamente conmovida. La artesanía transmite emociones que ningún objeto industrial puede.</p>
+                                    <h6 class="mb-1">- Javier López</h6>
+                                    <div class="rating text-warning">
+                                        ★★★★☆
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op5.jpeg" alt="Opinión 5" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">"Descubriendo la riqueza artesanal"</p>
+                                    <p class="text-muted mb-2">Cada visita a su tienda es como un viaje cultural. Los productos no solo son hermosos, sino que también cuentan historias de tradición y creatividad.</ ```html
+                                    <h6 class="mb-1">- Laura Sánchez</h6>
+                                    <div class="rating text-warning">
+                                        ★★★★★
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op6.jpeg" alt="Opinión 6" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">"Compromiso con los artesanos"</p>
+                                    <p class="text-muted mb-2">Me alegra saber que al comprar aquí, estoy apoyando directamente a comunidades de artesanos y ayudando a preservar técnicas tradicionales.</p>
+                                    <h6 class="mb-1">- Roberto Gutiérrez</h6>
+                                    <div class="rating text-warning">
+                                        ★★★★☆
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op7.jpeg" alt="Opinión 7" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">"Los detalles en cada producto son impresionantes"</p>
+                                    <p class="text-muted mb-2">Cada pieza que compré tiene un nivel de detalle que realmente destaca. Estoy muy satisfecho con mi compra.</p>
+                                    <h6 class="mb-1">- Elena Torres</h6>
+                                    <div class="rating text-warning">
+                                        ★★★★★
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op8.jpeg" alt="Opinión 8" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">"Un lugar perfecto para encontrar regalos únicos"</p>
+                                    <p class="text-muted mb-2">Siempre encuentro algo especial para regalar. La variedad y calidad son excepcionales.</p>
+                                    <h6 class="mb-1">- Andrés Pérez</h6>
+                                    <div class="rating text-warning">
+                                        ★★★★★
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="opinion-card p-3">
+                                <img src="Img/op9.jpeg" alt="Opinión 9" class="opinion-img mb-3">
+                                <div class="opinion-content text-center">
+                                    <p class="mb-2 fw-bold">"Siempre quedo satisfecho con mis compras"</p>
+                                    <p class="text-muted mb-2">La calidad de los productos es siempre alta y el servicio es excepcional. ¡Recomiendo este lugar!</p>
+                                    <h6 class="mb-1">- Javier Martínez</h6>
+                                    <div class="rating text-warning">
+                                        ★★★★★
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#opinionesCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#opinionesCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </section>
+                   
+      
+      <!-- Apartado sobre Artesanias&CO -->
+      <section class="container my-5">
+        <center><h2 style="font-family: 'Playfair Display', serif; font-size: 2rem;">Sobre Artesanias&CO</h2></center>
+        <br>
+        <p style="font-weight: bold; font-size: 1.5rem;">Misión:</p>
+        <p>Nuestra misión es preservar y promover el arte de la artesanía, ofreciendo productos auténticos y de calidad que reflejan la cultura y tradición de nuestros artesanos. Creemos en el poder de lo hecho a mano y en la importancia de apoyar a los pequeños productores. Cada pieza que ofrecemos es un testimonio de la dedicación y la habilidad de aquellos que han perfeccionado su oficio a lo largo de los años.</p>
+        
+        <p style="font-weight: bold; font-size: 1.5rem;">Visión:</p>
+        <p>Ser reconocidos como líderes en la venta de artesanías a nivel nacional, creando un espacio donde los artesanos puedan mostrar su trabajo y los consumidores encuentren productos únicos que cuenten una historia. Aspiramos a ser un puente entre los creadores y los amantes del arte, fomentando una comunidad que valore la autenticidad y la creatividad.</p>
+    
+        <p style="font-weight: bold; font-size: 1.5rem;">Valores:</p>
+        <p>En Artesanias&CO, nos guiamos por valores fundamentales que incluyen la sostenibilidad, el respeto por las tradiciones culturales y el compromiso social. Trabajamos de la mano con nuestros artesanos para garantizar que reciban una compensación justa por su trabajo, y promovemos prácticas que respetan el medio ambiente. Creemos que el comercio justo es esencial para el desarrollo de comunidades prósperas y resilientes.</p>
+    
+        <p style="font-weight: bold; font-size: 1.5rem;">Compromiso con la Calidad:</p>
+        <p>Nuestros productos son seleccionados cuidadosamente para asegurar que cada artículo no solo sea bello, sino también funcional y duradero. Desde la selección de materiales hasta el proceso de producción, cada paso es realizado con esmero. Queremos que nuestros clientes sientan la conexión con los artesanos a través de cada compra, llevando a casa una parte de su historia.</p>
+    
+        <!-- Carrusel -->
+        <div id="carouselExample" class="carousel slide" data-ride="carousel" style="max-width: 800px; margin: auto;">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="Img/quienesart3.png" class="d-block w-100 mx-auto" alt="Artesanía 1" style="height: 400px; object-fit: cover;">
+                </div>
+                <div class="carousel-item">
+                    <img src="Img/quienesart2.png" class="d-block w-100 mx-auto" alt="Artesanía 2" style="height: 400px; object-fit: cover;">
+                </div>
+                <div class="carousel-item">
+                    <img src="Img/quienesart4.png" class="d-block w-100 mx-auto" alt="Artesanía 3" style="height: 400px; object-fit: cover;">
+                </div>
+                <div class="carousel-item">
+                    <img src="Img/quienesart6.png" class="d-block w-100 mx-auto" alt="Artesanía 4" style="height: 400px; object-fit: cover;">
+                </div>
+                <div class="carousel-item">
+                    <img src="Img/quienesart8.png" class="d-block w-100 mx-auto" alt="Artesanía 5" style="height: 400px; object-fit: cover;">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+        <br>
+        
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-overlay text-white py-5">
+      <div class="bg-orange-900 text-white py-1">
+        <div class="container text-center">
+          <div class="mb-1">
+            <img
+              src="Img/logoartesanias.png"
+              alt="Logo Artesanias&Co"
+              class="mx-auto h-16"
+            />
+            <p class="text-md font-serif italic mt-1">
+              "Creaciones que conectan con el corazón"
+            </p>
+          </div>
+          <div class="container mx-auto px-2 grid md:grid-cols-3 gap-1">
+            <div>
+              <h4 class="text-md logo-font mb-1 text-color">Artesanias&Co</h4>
+              <p class="text-sm">
+                Celebrando la artesanía y la creatividad local
+              </p>
+              <p class="text-sm mt-1">Contacto: info@artesaniasandco.com</p>
+            </div>
+            <div>
+              <h4 class="text-sm logo-font mb-1 text-color">Navegación</h4>
+              <ul class="text-sm">
+                <li><a href="Principal.html" class="hover:text-orange-300">Inicio</a></li>
+                <li>
+                  <a href="Catalogo.html" class="hover:text-orange-300">Catálogo</a>
+                </li>
+                <li><p>Contactos</p></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-sm logo-font mb-1 text-color">Servicios</h4>
+              <ul class="text-sm">
+                <li>✓ Envío Gratuito</li>
+                <li>✓ Calidad Garantizada</li>
+                <li>✓ Soporte al Cliente</li>
+                <li>✓ Devoluciones Fáciles</li>
+              </ul>
+            </div>
+          </div>
+          <p class="mt-1 text-sm">
+            &copy; 2024 Artesanias&Co. Todos los derechos reservados.
+          </p>
+          <div class="mt-1">
+            <a href="#" class="text-white me-1 text-sm"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="text-white me-1 text-sm"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" class="text-white text-sm"
+              ><i class="bi bi-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Datos de productos
+const productos = [
+    {
+        id: 1,
+        nombre: "Collar de Perlas Naturales",
+        descripcion: "Elegancia artesanal",
+        precio: 29,
+        imagen: "Img/collar.jpg",
+    },
+    {
+        id: 2,
+        nombre: "Taza de Cerámica Única",
+        descripcion: "Hecha a mano",
+        precio: 15,
+        imagen: "Img/taza.jpg",
+    },
+    {
+        id: 3,
+        nombre: "Vela Aromática de Soja",
+        descripcion: "Fragancia natural",
+        precio: 20,
+        imagen: "Img/vela.jpg",
+    },
+    {
+        id: 4,
+        nombre: "Manta de Lana Tejida",
+        descripcion: "Calidez tradicional",
+        precio: 50,
+        imagen: "Img/manta.jpg",
+    },
+    {
+        id: 5,
+        nombre: "Pulsera de Cuero",
+        descripcion: "Estilo y durabilidad.",
+        precio: 19,
+        imagen: "Img/pulsera.jpg",
+    },
+    {
+        id: 6,
+        nombre: "Anillo de Plata",
+        descripcion: "Brillo y elegancia.",
+        precio: 39,
+        imagen: "Img/anillo.jpg",
+    },
+    {
+        id: 7,
+        nombre: "Collar de Madera",
+        descripcion: "Hecho a mano con amor.",
+        precio: 25,
+        imagen: "Img/collar_madera.jpg",
+    },
+    {
+        id: 8,
+        nombre: "Cojín de Algodón",
+        descripcion: "Comodidad y estilo.",
+        precio: 30,
+        imagen: "Img/cojin.jpg",
+    },
+];
+
+// Carrito
+let carrito = [];
+
+// Mostrar productos
+const productGrid = document.getElementById("product-grid");
+
+function cargarProductos() {
+    productos.forEach((producto) => {
+        const productoHTML = `
+            <div class="col">
+                <div class="card product-card h-100">
+                    <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+                    <div class="card-body text-center">
+                        <h5 class="card-title logo-font">${producto.nombre}</h5>
+                        <p class="card-text">${producto.descripcion}</p>
+                        <p class="fw-bold text-success">$${producto.precio}</p>
+                        <button onclick="agregarAlCarrito(${producto.id})" class="btn btn-artesanal w-100">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        productGrid.innerHTML += productoHTML;
+    });
+}
+
+// Agregar producto al carrito
+function agregarAlCarrito(id) {
+    const producto = productos.find((prod) => prod.id === id);
+    if (producto) {
+        carrito.push(producto);
+        actualizarCarrito();
+    }
+}
+
+// Actualizar ícono del carrito
+function actualizarCarrito() {
+    const cartCount = document.getElementById("cart-count");
+    cartCount.textContent = carrito.length;
+}
+
+// Datos de opiniones
+const opiniones = [
+    { texto: "¡Increíble calidad y diseño único!", autor: "María G." },
+    { texto: "Me encantan los productos, siempre vuelvo por más.", autor: "Juan P." },
+    { texto: "El servicio al cliente es excepcional, muy recomendados.", autor: "Ana L." },
+    { texto: "Los productos son hermosos y bien hechos.", autor: "Luis M." },
+    { texto: "Siempre encuentro algo especial aquí.", autor: "Sofía R." },
+    { texto: "La entrega fue rápida y el producto llegó en perfectas condiciones.", autor: "Carlos T." },
+    { texto: "Me encanta la variedad de productos artesanales.", autor: "Elena P." },
+    { texto: "Definitivamente volveré a comprar.", autor: "Javier S." },
+];
+
+// Mostrar opiniones en el carrusel
+const carouselInner = document.querySelector("#carouselOpiniones .carousel-inner");
+
+function cargarOpiniones() {
+    opiniones.forEach((opinion, index) => {
+        const opinionHTML = `
+            <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                <div class="card bg-light text-center">
+                    <div class="card-body">
+                        <p class="card-text">"${opinion.texto}"</p>
+                        <h6 class="card-subtitle text-muted">- ${opinion.autor}</h6>
+                    </div>
+                </div>
+            </div>
+        `;
+        carouselInner.innerHTML += opinionHTML;
+    });
+}
+
+// Mostrar el botón de volver arriba al hacer scroll
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "flex";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+};
+
+// Función para volver arriba
+scrollToTopBtn.onclick = function() {
+    document.body.scrollTop = 0; // Para Safari
+    document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
+};
+
+// Cargar contenido al iniciar
+document.addEventListener("DOMContentLoaded", () => {
+    cargarProductos();
+    cargarOpiniones();
+});
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
