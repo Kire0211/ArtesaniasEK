@@ -1,7 +1,6 @@
-// Función para cargar artesanías desde la API
 async function cargarArtesanias() {
     try {
-        const response = await fetch('http://localhost:8080/api/artesanias'); // Cambia la URL si es necesario
+        const response = await fetch('http://localhost:8080/api/artesanias');
         if (!response.ok) {
             throw new Error('Error al obtener las artesanías');
         }
@@ -10,6 +9,18 @@ async function cargarArtesanias() {
     } catch (error) {
         console.error('Error:', error);
     }
+}
+
+function mostrarArtesanias(artesanias) {
+    const productGrid = document.getElementById("product-grid");
+    productGrid.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevos elementos
+
+    artesanias.forEach(artesania => {
+        const productoHTML = `
+            <!-- HTML para mostrar la artesanía -->
+        `;
+        productGrid.innerHTML += productoHTML;
+    });
 }
 
 // Función para mostrar las artesanías en el DOM
