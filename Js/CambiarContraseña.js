@@ -1,3 +1,4 @@
+ // Mostrar el botón de volver arriba al hacer scroll
  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
  window.onscroll = function() {
      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -6,27 +7,29 @@
          scrollToTopBtn.style.display = "none";
      }
  }; 
+// Función para volver arriba
+scrollToTopBtn.onclick = function() {
+    document.documentElement.scrollTop = 0; 
+};
 
- document.getElementById('registroForm').addEventListener('submit', async function(e) {
+document.getElementById('recuperarForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
-    const nombre = document.getElementById('nombre').value;
+    const id = document.getElementById('id').value;
     const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const rol = document.getElementById('rol').value;
+    const nuevaContrasena = document.getElementById('nuevaContrasena').value;
 
     const datos = {
-        nombre: nombre,
+        id: id,
         email: email,
-        password: password,
-        rol: rol
+        password: nuevaContrasena
     };
 
     const mensajeElemento = document.getElementById('mensaje');
 
     try {
-        const respuesta = await fetch('http://localhost:8080/api/usuarios', {
-            method: 'POST',
+        const respuesta = await fetch(`http://localhost:8080/api/usuarios/${id}`, {
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -34,13 +37,12 @@
         });
 
         if (respuesta.ok) {
-            mensajeElemento.innerHTML = 'Registro exitoso';
+            mensajeElemento.innerHTML = 'Contraseña actualizada exitosamente';
             mensajeElemento.className = 'success';
-            
-            document.getElementById('registroForm').reset();
+            document.getElementById('recuperarForm').reset();
         } else {
             const error = await respuesta.json();
-            mensajeElemento.innerHTML = error.mensaje || 'Error al registrar';
+            mensajeElemento.innerHTML = error.mensaje || 'Error al actualizar contraseña';
             mensajeElemento.className = 'error';
         }
     } catch (error) {

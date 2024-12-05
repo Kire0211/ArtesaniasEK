@@ -1,3 +1,4 @@
+ // Mostrar el botón de volver arriba al hacer scroll
  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
  window.onscroll = function() {
      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -6,41 +7,35 @@
          scrollToTopBtn.style.display = "none";
      }
  }; 
+// Función para volver arriba
+scrollToTopBtn.onclick = function() {
+    document.documentElement.scrollTop = 0; 
+};
 
- document.getElementById('registroForm').addEventListener('submit', async function(e) {
+
+document.getElementById('eliminarForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
+    const id = document.getElementById('id').value;
     const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const rol = document.getElementById('rol').value;
-
-    const datos = {
-        nombre: nombre,
-        email: email,
-        password: password,
-        rol: rol
-    };
 
     const mensajeElemento = document.getElementById('mensaje');
 
     try {
-        const respuesta = await fetch('http://localhost:8080/api/usuarios', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(datos)
+        const respuesta = await fetch(`http://localhost:8080/api/usuarios/${id}`, {
+            method: 'DELETE'
         });
 
         if (respuesta.ok) {
-            mensajeElemento.innerHTML = 'Registro exitoso';
+            mensajeElemento.innerHTML = 'Cuenta eliminada exitosamente';
             mensajeElemento.className = 'success';
+            document.getElementById('eliminarForm').reset();
             
-            document.getElementById('registroForm').reset();
+            
+            window.location.href = 'Logins.html';
         } else {
             const error = await respuesta.json();
-            mensajeElemento.innerHTML = error.mensaje || 'Error al registrar';
+            mensajeElemento.innerHTML = error.mensaje || 'Error al eliminar cuenta';
             mensajeElemento.className = 'error';
         }
     } catch (error) {

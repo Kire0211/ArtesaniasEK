@@ -172,8 +172,8 @@ const productosPage9 = [
         productosPage8,
         productosPage9
     ];
-    let carrito = []; // Inicializa el carrito
-    const productosPorPagina = 16; // Número de productos por página
+    let carrito = [];
+    const productosPorPagina = 16; 
     let currentPage = 0; 
 
     function displayProducts() { 
@@ -181,11 +181,9 @@ const productosPage9 = [
     productContainer.innerHTML = ''; 
     let carrito = [];
 
-    // Calcular el índice de inicio y fin de los productos a mostrar
     const start = currentPage * productosPorPagina; 
     const end = start + productosPorPagina; 
 
-    // Obtener los productos para la página actual
     const productosActuales = allProducts.flat().slice(start, end);
 
     productosActuales.forEach(product => { 

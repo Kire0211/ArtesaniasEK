@@ -13,7 +13,7 @@ async function cargarArtesanias() {
 
 function mostrarArtesanias(artesanias) {
     const productGrid = document.getElementById("product-grid");
-    productGrid.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevos elementos
+    productGrid.innerHTML = '';
 
     artesanias.forEach(artesania => {
         const productoHTML = `
@@ -26,7 +26,7 @@ function mostrarArtesanias(artesanias) {
 // Función para mostrar las artesanías en el DOM
 function mostrarArtesanias(artesanias) {
     const productGrid = document.getElementById("product-grid");
-    productGrid.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevos elementos
+    productGrid.innerHTML = '';
 
     artesanias.forEach(artesania => {
         const productoHTML = `
@@ -46,15 +46,12 @@ function mostrarArtesanias(artesanias) {
     });
 }
 
-// Llamar a la función al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
     cargarArtesanias();
 });
 
-// Carrito
 let carrito = [];
 
-// Mostrar productos
 const productGrid = document.getElementById("product-grid");
 
 function cargarProductos() {
@@ -76,7 +73,6 @@ function cargarProductos() {
     });
 }
 
-// Agregar producto al carrito
 function agregarAlCarrito(id) {
     const producto = productos.find((prod) => prod.id === id);
     if (producto) {
@@ -85,13 +81,11 @@ function agregarAlCarrito(id) {
     }
 }
 
-// Actualizar ícono del carrito
 function actualizarCarrito() {
     const cartCount = document.getElementById("cart-count");
     cartCount.textContent = carrito.length;
 }
 
-// Datos de opiniones
 const opiniones = [
     { texto: "¡Increíble calidad y diseño único!", autor: "María G." },
     { texto: "Me encantan los productos, siempre vuelvo por más.", autor: "Juan P." },
@@ -103,7 +97,6 @@ const opiniones = [
     { texto: "Definitivamente volveré a comprar.", autor: "Javier S." },
 ];
 
-// Mostrar opiniones en el carrusel
 const carouselInner = document.querySelector("#carouselOpiniones .carousel-inner");
 
 function cargarOpiniones() {
@@ -122,9 +115,8 @@ function cargarOpiniones() {
     });
 }
 
-// Mostrar el botón de volver arriba al hacer scroll
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-window.onscroll = function() {
+window.onscroll = function () {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         scrollToTopBtn.style.display = "flex";
     } else {
@@ -133,12 +125,11 @@ window.onscroll = function() {
 };
 
 // Función para volver arriba
-scrollToTopBtn.onclick = function() {
+scrollToTopBtn.onclick = function () {
     document.body.scrollTop = 0; // Para Safari
     document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
 };
 
-// Cargar contenido al iniciar
 document.addEventListener("DOMContentLoaded", () => {
     cargarProductos();
     cargarOpiniones();

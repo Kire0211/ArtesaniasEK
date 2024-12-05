@@ -45,7 +45,7 @@
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.2s;
-    height: 300px; /* Aumentar la altura de las cards */
+    height: 300px; 
   }
 
   .product-card:hover {
@@ -53,7 +53,7 @@
   }
 
   .card-img-top {
-    height: 150px; /* Altura fija para las imágenes */
+    height: 150px; 
     object-fit: cover;
   }
 
@@ -63,32 +63,32 @@
   }
 
   .product {
-    margin: 10px; /* Espacio entre productos */
+    margin: 10px; 
   }
 
   #product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-    gap: 20px; /* Espacio entre las tarjetas */
-    padding: 10px; /* Espaciado interno del contenedor */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    padding: 10px; 
   }
   .scroll-to-top {
-  position: fixed; /* Fijo en la pantalla */
-  bottom: 20px; /* Distancia desde el fondo */
-  right: 20px; /* Distancia desde la derecha */
-  background-color: var(--third-color); /* Color de fondo */
-  color: var(--secondary-color); /* Color del texto */
-  border: none; /* Sin borde */
-  padding: 10px 15px; /* Espaciado interno */
-  border-radius: 5px; /* Bordes redondeados */
-  cursor: pointer; /* Cambiar cursor al pasar el mouse */
-  z-index: 1000; /* Asegurarse de que esté encima de otros elementos */
-  display: none; /* Ocultar inicialmente */
-  transition: background-color 0.3s; /* Transición suave */
+  position: fixed; 
+  bottom: 20px; 
+  right: 20px; 
+  background-color: var(--third-color); 
+  color: var(--secondary-color); 
+  border: none; 
+  padding: 10px 15px; 
+  border-radius: 5px; 
+  cursor: pointer;
+  z-index: 1000; 
+  display: none; 
+  transition: background-color 0.3s; 
 }
 
 .scroll-to-top:hover {
-  background-color: black; /* Color de fondo más oscuro al pasar el mouse */
+  background-color: black; 
 }
 
   #cart-count {
@@ -145,10 +145,10 @@
   }
 
   .page-number {
-    font-size: 18px; /* Tamaño de la fuente */
-    margin: 0 15px; /* Espaciado lateral */
-    font-weight: bold; /* Texto en negrita */
-    color: #333; /* Color del texto */
+    font-size: 18px; 
+    margin: 0 15px; 
+    font-weight: bold; 
+    color: #333; 
   }
   .pagination {
   display: flex;
@@ -164,52 +164,52 @@
 }
 
 .pagination-btn {
-  background-color: #4CAF50; /* Color de fondo */
-  color: white; /* Color del texto */
-  border: none; /* Sin borde */
-  padding: 10px 20px; /* Espaciado interno */
-  text-align: center; /* Centrar texto */
-  text-decoration: none; /* Sin subrayado */
-  display: inline-block; /* Mostrar como bloque en línea */
-  font-size: 16px; /* Tamaño de fuente */
-  margin: 0 10px; /* Margen entre botones */
-  border-radius: 5px; /* Bordes redondeados */
-  cursor: pointer; /* Cambiar cursor al pasar el mouse */
-  transition: background-color 0.3s; /* Transición suave */
+  background-color: #4CAF50; 
+  color: white; 
+  border: none;
+  padding: 10px 20px; 
+  text-align: center; 
+  text-decoration: none; 
+  display: inline-block; 
+  font-size: 16px; 
+  margin: 0 10px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
 }
 
 .pagination-btn:hover {
-  background-color: #45a049; /* Color de fondo al pasar el mouse */
+  background-color: #45a049; 
 }
 
 .page-count {
-  font-size: 18px; /* Tamaño de fuente del contador */
-  margin: 0 15px; /* Margen alrededor del contador */
+  font-size: 18px; 
+  margin: 0 15px; 
 }
 .pagination-btn {
-  background-color: #4CAF50; /* Color de fondo */
-  color: white; /* Color del texto */
-  border: none; /* Sin borde */
-  padding: 10px 20px; /* Espaciado interno */
-  text-align: center; /* Centrar texto */
-  text-decoration: none; /* Sin subrayado */
-  display: inline-block; /* Mostrar como bloque en línea */
-  font-size: 16px; /* Tamaño de fuente */
-  margin: 0 10px; /* Margen entre botones */
-  border-radius: 5px; /* Bordes redondeados */
-  cursor: pointer; /* Cambiar cursor al pasar el mouse */
-  transition: background-color 0.3s; /* Transición suave */
+  background-color: #4CAF50; 
+  color: white;
+  border: none; 
+  padding: 10px 20px; 
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block; 
+  font-size: 16px;
+  margin: 0 10px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
 }
 
 .pagination-btn:hover {
-  background-color: #45a049; /* Color de fondo al pasar el mouse */
+  background-color: #45a049; 
 }
 
 .page-count {
-  font-size: 18px; /* Tamaño de fuente del contador */
-  margin: 0 15px; /* Margen alrededor del contador */
+  font-size: 18px;
+  margin: 0 15px; 
 }
-/* Contenedor de navegación */
+
 .navegacion-container {
   display: flex;
   justify-content: center;
@@ -217,35 +217,32 @@
   margin: 20px 0;
 }
 
-/* Estilo para los botones de navegación */
 .btn-navegacion {
-  background-color: var(--secondary-color); /* Color de fondo azul */
-  color: thistle; /* Color del texto */
-  border: none; /* Sin borde */
-  padding: 10px 20px; /* Espaciado interno */
-  font-size: 16px; /* Tamaño de fuente */
-  border-radius: 5px; /* Bordes redondeados */
-  cursor: pointer; /* Cambiar cursor al pasar el mouse */
-  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
-  margin: 0 10px; /* Margen entre botones */
+  background-color: var(--secondary-color); 
+  color: thistle; 
+  border: none;
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s, transform 0.2s; 
+  margin: 0 10px;
 }
 
-/* Efecto hover para los botones */
 .btn-navegacion:hover {
-  background-color: var(--third-color); /* Color de fondo más oscuro al pasar el mouse */
-  transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+  background-color: var(--third-color); 
+  transform: scale(1.05); 
 }
 
-/* Estilo para el número de página */
 .page-number {
-  font-size: 18px; /* Tamaño de fuente del número de página */
-  margin: 0 15px; /* Margen alrededor del número de página */
-  color: #333; /* Color del texto */
-  font-weight: bold; /* Negrita */
+  font-size: 18px; 
+  margin: 0 15px; 
+  color: #333; 
+  font-weight: bold; 
 }
   .pagination {
-    display: flex; /* Usar flexbox para alinear los elementos */
-    justify-content: center; /* Centrar los elementos */
-    margin-top: 20px; /* Margen superior */
-    margin-bottom: 20px; /* Margen inferior */
+    display: flex; 
+    justify-content: center; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
   }
